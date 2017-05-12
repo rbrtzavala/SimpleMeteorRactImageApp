@@ -7,9 +7,15 @@ const ImageDetail = (props) => {
   // props.picture.link
 
   return (
-    <li>
-      <img src={props.picture.link} />
-      {props.picture.title}
+    <li className="list-group-item media">
+      <div className="media-left">
+        <img src={props.picture.link} />
+      </div>
+      <div className="media-body">
+        <h4 className="media-heading">
+          {props.picture.title}
+        </h4>
+      </div>
     </li>
   );
 };
