@@ -11,7 +11,10 @@ import ImageDetail from './image_detail';
 
 // Create component
 const ImageList = (props) => {
-  const RenderedImages = props.pictures.map(image =>
+  // Reject images where is_albium = false.
+  const validImages = props.pictures.filter(image => !image.is_album);
+
+  const RenderedImages = validImages.map(image =>
     <ImageDetail key={image.title} picture={image} />
   );
 
