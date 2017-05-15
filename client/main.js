@@ -16,12 +16,14 @@ class App extends Component {
 
     this.state = { images: [] };
   }
+
+  // Method runs just before component is rendered to the screen.
   componentWillMount() {
     // Place to load data
-    // ALWAYS update state with setState
+    // ALWAYS update state with this.setState
     axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
       .then(response => this.setState({ images: response.data.data }));
-    // NEVER update as this.state =
+    // NEVER update as this.state
   }
 
   render() {
