@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ImageScore from './image_score';
+
 const ImageDetail = (props) => {
   // Parent to Child communication handled via props
   // props.picture => this is the picture object
@@ -15,6 +17,8 @@ const ImageDetail = (props) => {
         <h4 className="media-heading">
           {props.picture.title}
         </h4>
+         <p>{props.picture.description}</p>
+         <ImageScore ups={props.picture.ups} downs={props.picture.downs}/>
       </div>
     </li>
   );
